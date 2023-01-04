@@ -8,6 +8,7 @@ export const getClientsRouter = Router();
 getClientsRouter.get("/clients", async (req, res) => {
   const clients = await prisma.clients.findMany({
     select: {
+      id: true,
       name: true,
       cpf: true,
       email: true,
