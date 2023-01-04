@@ -6,11 +6,11 @@ const prisma = new PrismaClient();
 export const deleteClientRouter = Router();
 
 deleteClientRouter.delete("/clients/del", async (req, res) => {
-  const { cpf } = req.body;
+  const { id } = req.body;
 
   await prisma.clients.delete({
     where: {
-      cpf,
+      id,
     },
   });
 
