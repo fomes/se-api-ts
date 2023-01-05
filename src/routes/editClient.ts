@@ -6,11 +6,11 @@ const prisma = new PrismaClient();
 export const editClientsRouter = Router();
 
 editClientsRouter.put("/clients/edit", async (req, res) => {
-  const { name, cpf, email, phone, address } = req.body;
+  const { id, name, cpf, email, phone, address } = req.body;
 
   await prisma.clients.update({
     where: {
-      cpf,
+      id,
     },
     data: {
       name,
